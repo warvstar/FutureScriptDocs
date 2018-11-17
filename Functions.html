@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; FutureScript 0.01 documentation</title>
+  <title>Functions &mdash; FutureScript 0.01 documentation</title>
   
 
   
@@ -27,8 +26,10 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Types" href="Types.html" />
+    <link rel="prev" title="Variables" href="Variables.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -78,11 +79,10 @@
             
             
               <p class="caption"><span class="caption-text">Tutorial</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Variables.html">Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Types.html">Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Internals.html">Internals</a></li>
 </ul>
 
             
@@ -128,12 +128,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Functions</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/Functions.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -145,11 +147,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="https://github.com/warvstar/">Robert Stewart</a>
+Functions can be created in multiple ways:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Assign 8 to x
+repl&gt; x: print(2); return 1 # declared without arguments or return type, semicolon can be used to have multiple statements on one block.
+repl&gt; x!
+1
 
-<h1 id="index">Index</h1>
+repl&gt; x(i32 n)i32: print(n); return n # declared with arguments, and types.
+repl&gt; x(2)
+2
+2
 
-<div class="genindex-jumpbox">
- 
+repl&gt; x(n) print(n); return n # declared with arguments, without types.
+repl&gt; x(2)
+2
+2
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Functions can omit the return keyword, last variable is returned::</dt>
+<dd><dl class="first docutils">
+<dt>barkTwice:</dt>
+<dd>print(“bark”)
+print(“bark”)
+1</dd>
+</dl>
+<p class="last">repl&gt;bark!
+“bark”
+“bark”
+1</p>
+</dd>
+</dl>
+<p>Functions can exists at any scope:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class A
+ bark:
+  woof: print(&quot;Woof&quot;) # This is a function inside a function
+  woof!
+
+repl&gt;A!.bark!
+&quot;Woof&quot;
+</pre></div>
+</div>
 </div>
 
 
@@ -157,6 +198,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Types.html" class="btn btn-neutral float-right" title="Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Variables.html" class="btn btn-neutral" title="Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
